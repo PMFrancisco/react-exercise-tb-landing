@@ -1,81 +1,32 @@
-import React, { useState } from 'react';
+import React from "react";
 
+const HeaderInfo = {
+  header: {
+    title: "Acelera tu carrera digital",
+    subheading:
+      "En una época de cambios y desarrollo tecnológico, tu formación no puede perder el ritmo.",
+    paragraph:
+      "Cuando eliges un bootcamp en The Bridge estás dando el paso definitivo hacia una de las profesiones del futuro más demandadas en el presente, ya sea Ciberseguridad, Data Science, Desarrollo de Software, Diseño de Producto UX/UI o Marketing Digital.",
+    button: "pide información",
+  },
+};
 function Header() {
-  const [openDropdown, setOpenDropdown] = useState(null);
-
-  const dropdownMenus = [
-    {
-      name: 'courses',
-      label: 'Cursos',
-      links: [
-        { href: '/fullstack', label: 'FullStack Web Developer' },
-        { href: '/data', label: 'Data Science' }
-      ]
-    },
-    {
-      name: 'studyLocations',
-      label: 'Dónde estudiar',
-      links: [
-        { href: '/madrid', label: 'Madrid' },
-        { href: '/vitoria', label: 'Vitoria' }
-      ]
-    },
-    {
-      name: 'financingScholarships',
-      label: 'Financiación y becas',
-      links: [
-        { href: '/beca', label: 'Becas' },
-        { href: '/financiacion', label: 'Financiación' }
-      ]
-    },
-    {
-      name: 'companiesInstitutions',
-      label: 'Empresas e instituciones',
-      links: [
-        { href: '/telefonica', label: 'Telefónica' },
-        { href: '/deloitte', label: 'Deloitte' }
-      ]
-    },
-    {
-      name: 'aboutUs',
-      label: 'Sobre nosotros',
-      links: [
-        { href: '/quienesSomos', label: 'Quienes somos' },
-        { href: '/contacto', label: 'Contacta con nosotros' }
-      ]
-    }
-  ];
-
-  const showDropdown = (dropdownName) => {
-    setOpenDropdown(dropdownName);
-  };
-
-  const hideDropdown = () => {
-    setOpenDropdown(null);
-  };
-
   return (
-    <header>
-      <nav>
-        <ul>
-          <li><a href="/"><h1>TheBridge</h1></a></li>
-          {dropdownMenus.map(menu => (
-            <li key={menu.name}
-                onMouseOver={() => showDropdown(menu.name)}
-                onMouseLeave={hideDropdown}>
-              {menu.label}
-              {openDropdown === menu.name && (
-                <ul>
-                  {menu.links.map(link => (
-                    <li key={link.href}><a href={link.href}>{link.label}</a></li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
+    <div className="flex-header" id="flex-header">
+      <div className="header-info" id="header-info">
+        <h1>{HeaderInfo.header.title}</h1>
+        <h2>{HeaderInfo.header.subheading}</h2>
+        <p>{HeaderInfo.header.paragraph}</p>
+        <button>{HeaderInfo.header.button}</button>
+      </div>
+      <div className="header-image" id="header-image">
+        <img
+          src="./src/assets/img/750_x_1040_Imagen_5_9d451882d8.webp"
+          alt="A classroom full of people working with their computers"
+          className="header-photo"
+        ></img>
+      </div>
+    </div>
   );
 }
 
