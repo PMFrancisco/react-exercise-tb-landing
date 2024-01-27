@@ -7,10 +7,8 @@ function App() {
   return (
     <div>
       <Navbar />
-      <div className="flex-organiser" id="flex-organiser">
         <Header />
         <Bootcamps />
-      </div>
     </div>
   );
 }

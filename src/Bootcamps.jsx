@@ -47,20 +47,23 @@ const BootcampInfo = {
 
 function Bootcamps() {
   return (
-    <div>
-      <h1>{BootcampInfo.bootcamps.header}</h1>
-
-      {BootcampInfo.bootcamps.courses.map((courses) => (
-        <div key={courses.name}>
-          <h4>{courses.title}</h4>
-          <img src={courses.img} alt="course logo" />
-          <p>{courses.hours}</p>
-          <p>{courses.format}</p>
-          <p>{courses.description}</p>
-          <button>+ info</button>
+    <section className="bootcamp-section" id="bootcamp-section">
+      <div className="bootcamp-info" id="bootcamp-info">
+        <h1>{BootcampInfo.bootcamps.header}</h1>
+        <div className="flex-bootcamp" id="flex-bootcamp">
+          {BootcampInfo.bootcamps.courses.map((courses) => (
+            <div key={courses.name} className="bootcamp-courses">
+              <h4>{courses.title}</h4>
+              <img className="course-img" src={courses.img} alt="course logo" />
+              <p className="hours">{courses.hours}</p>
+              <p className="format">{courses.format}</p>
+              <p>{courses.description}</p>
+              <a src="/info" className="info-anchor">+ info</a>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    </section>
   );
 }
 

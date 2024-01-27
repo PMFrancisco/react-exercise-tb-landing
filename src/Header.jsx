@@ -17,7 +17,7 @@ function Header() {
         <h1>{HeaderInfo.header.title}</h1>
         <h2>{HeaderInfo.header.subheading}</h2>
         <p>{HeaderInfo.header.paragraph}</p>
-        <button>{HeaderInfo.header.button}</button>
+        <button className="header-button">{HeaderInfo.header.button}</button>
       </div>
       <div className="header-image" id="header-image">
         <img
